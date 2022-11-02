@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const stream = fs.createReadStream(path.join(__dirname,'text.txt'), 'utf-8');
+const pathToFile = path.join(__dirname,'text.txt');
+const stream = fs.createReadStream(pathToFile, 'utf-8');
 
 let data = '';
 stream.on('data', (chunk) => {
@@ -9,4 +10,4 @@ stream.on('data', (chunk) => {
 
 stream.on('end', () => {
   console.log(data);
-});
+});  
